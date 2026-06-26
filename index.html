@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Patrones Mapkalo - La Élite de la Simulación en American Truck Simulator">
+    <title>Patrones Mapkalo | Simulación ATS Nivel Ferrari</title>
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fuentes Premium (Playfair Display & Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- 1. Navegación Minimalista Superior -->
+    <nav class="navbar" id="navbar">
+        <a href="#hero" class="brand-logo">
+            <!-- El logo se toma exactamente de PatronesMapkalo.png como se indicó -->
+            <img src="PatronesMapkalo.png" alt="Patrones Mapkalo Logo" class="logo-img">
+        </a>
+
+        <!-- Menú Desktop -->
+        <div class="nav-menu">
+            <a href="#historia" class="nav-link">Historia</a>
+            <a href="#mapkalo" class="nav-link">Mapkalo</a>
+            <a href="#video" class="nav-link">Video</a>
+            <a href="#descargas" class="nav-link">Descargas</a>
+            <a href="#reglas" class="nav-link">Reglas</a>
+        </div>
+
+        <!-- Botón Menú Mobile (Hamburguesa UI) -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir Menú">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </nav>
+
+    <!-- Overlay Menú Mobile -->
+    <div class="mobile-overlay" id="mobile-overlay">
+        <div class="mobile-nav-menu">
+            <a href="#historia" class="mobile-nav-link">Historia</a>
+            <a href="#mapkalo" class="mobile-nav-link">Mapkalo</a>
+            <a href="#video" class="mobile-nav-link">Video</a>
+            <a href="#descargas" class="mobile-nav-link">Descargas</a>
+            <a href="#reglas" class="mobile-nav-link">Reglas</a>
+        </div>
+    </div>
+
+    <!-- 2. Hero Section (Video Slow Motion 100vh Frontal) -->
+    <header id="hero" class="hero-section">
+        <div class="hero-bg" style="background-image:url('La elite.png'); background-size:cover; background-position:center;"></div>
+        <div class="hero-content reveal-fade-up">
+<!-- logo removed -->
+            <div class="hero-text-wrapper">
+                <h1 class="hero-title">La Excelencia en <span>Simulación</span></h1>
+                <p class="hero-subtitle">American Truck Simulator</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 3. Sección: Historia (Rejilla Asimétrica y Padding 20vh) -->
+        <section id="historia" class="luxury-section">
+            <div class="container grid-asymmetric">
+                <div class="text-content reveal-fade-up">
+                    <h2 class="section-heading">Historia</h2>
+                    <hr class="luxury-divider">
+                    <!-- Textos Exactos de la Guía -->
+                    <p class="body-text">
+                        Nosotros somos Mapkalo, un grupo de amigos apasionados por los camiones y la simulación de
+                        conducción en Ats.
+                    </p>
+                    <p class="body-text">
+                        Patrones Mapkalo (PM) busca revitalizar el interés en el juego organizando torneos semanales con
+                        premios, introduciendo nuevos mapas y desafíos, y colaborando con influencers.
+                    </p>
+                    <p class="body-text">
+                        Se mejorará la experiencia del usuario con actualizaciones regulares y se fomentará la
+                        interacción en foros y redes sociales. Estas iniciativas tienen como objetivo atraer nuevos
+                        jugadores y fidelizar a los actuales, creando una comunidad activa y apasionada al ats y
+                        Mapkalo.
+                    </p>
+                </div>
+                <div class="image-content reveal-fade-left">
+                    <div class="parallax-container">
+                        <!-- Fotografía Tractomula Amanecer/Atardecer Iluminación Profesional -->
+                        <img src="https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?q=80&w=1200"
+                            alt="Tractomula en el atardecer" class="parallax-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Sección: Mapkalo (Texto Centrado Elegante) -->
+        <section id="mapkalo" class="luxury-section bg-alt">
+            <div class="container text-center reveal-fade-up">
+                <h2 class="section-heading">Mapkalo</h2>
+                <hr class="luxury-divider center">
+                <!-- Textos Exactos de la Guía -->
+                <div class="mapkalo-columns">
+    <p class="body-text large-serif column-left">
+        Bueno, permíteme relatarte que Mapkalo es un proyecto que ha germinado bajo la dedicación de Kaloma Restrepo.
+    </p>
+    <p class="body-text max-width-center column-right">
+        Este mapa ha tomado forma a lo largo de más de 8 años, gracias al apoyo de numerosas almas, aunque no puedo mencionar a todas. Es una creación amateur, pero realizada con un profundo cariño, destinada a que la comunidad de American Truck Simulator en Colombia y más allá lo disfrute.
+    </p>
+</div>
+                <p class="signature-text">Hecho con amor en Colombia.</p>
+            </div>
+        </section>
+
+        <!-- Sección: Videos Presentación -->
+        <section id="video" class="luxury-section">
+            <div class="container text-center reveal-fade-up">
+                <h2 class="section-heading">Videos</h2>
+                <hr class="luxury-divider center">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <iframe src="https://www.youtube.com/embed/2Tnsp6xlKdE?si=8nIzO5HuS-AJrIDn" title="YouTube video player 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                    </div>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <iframe src="https://www.youtube.com/embed/MB72UrbrZHY?si=vFj0f0b_Na4spaln" title="YouTube video player 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                    </div>
+                </div>
+                <!-- Botón de Suscribirse -->
+                <a href="https://www.youtube.com/@Patrones-Mapkalo-COL" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; background-color: #FF0000; color: #FFFFFF; font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; padding: 15px 35px; border-radius: 50px; text-decoration: none; box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4); transition: all 0.3s ease;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.582 6.186a2.506 2.506 0 0 0-1.762-1.766C18.265 4 12 4 12 4s-6.264 4-7.82 4.42a2.506 2.506 0 0 0-1.762 1.766C2 7.749 2 12 2 12s0 4.252.418 5.814a2.506 2.506 0 0 0 1.762 1.766C5.736 20 12 20 12 20s6.265 0 7.82-.42a2.506 2.506 0 0 0 1.762-1.766C22 16.252 22 12 22 12s0-4.252-.418-5.814zM9.5 15.518V8.482L15.5 12l-6 3.518z"/>
+                    </svg>
+                    Suscribirse
+                </a>
+            </div>
+        </section>
+
+        <!-- 5. Sección: Descargas de Mods y DLC (Tarjetas de Lujo) -->
+        <section id="descargas" class="luxury-section">
+            <div class="container">
+                <div class="grid-cards">
+
+                    <!-- Tarjeta: Descargas de Mods -->
+                    <article class="luxury-card reveal-fade-up delay-1">
+                        <div class="card-image-wrapper">
+                            <!-- Fotografía: Mula con la bandera de Colombia -->
+                            <img src="mula_colombia_1772231697229.png"
+                                alt="Mula con la bandera de Colombia - Patrones Mapkalo">
+                        </div>
+                        <div class="card-text-wrapper">
+                            <h3 class="card-title">Descargas de Mods</h3>
+                            <!-- Texto Exacto Guía -->
+                            <p class="body-text">Esto son los mods que se encuentran disponibles para descargar: Por
+                                Favor unirte al servidor de discord para descargar los mods.</p>
+                            <a href="https://discord.gg/ZGXGxykQ8Z" target="_blank" rel="noopener noreferrer"
+                                class="cta-link">Ir a Discord <span class="arrow">→</span></a>
+                        </div>
+                    </article>
+
+                    <!-- Tarjeta: DLC -->
+                    <article class="luxury-card reveal-fade-up delay-2">
+                        <div class="card-image-wrapper">
+                            <!-- Fotografía Rendering 3D/Profesional Tractomula Amanecer -->
+                            <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=800"
+                                alt="DLCs Requeridos">
+                        </div>
+                        <div class="card-text-wrapper">
+                            <h3 class="card-title">DLCs</h3>
+                            <!-- Texto Exacto Guía -->
+                            <p class="body-text">Archivos que se encuentran disponibles para descargar en el juego de
+                                ATS y que son necesarios para poder jugar en el mapa de Mapkalo ponerlo en el <br> <code
+                                    class="code-block">C:\Program Files (x86)\Steam\steamapps\common\American Truck Simulator</code><br><br>
+                                Por Favor unirte al servidor de discord para descargar los DLCs.</p>
+                            <a href="https://discord.gg/ky4u56xx" target="_blank" rel="noopener noreferrer"
+                                class="cta-link">Ir a Discord <span class="arrow">→</span></a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Sección: Reglas ATS (Acordeón para no saturar la pantalla) -->
+        <section id="reglas" class="luxury-section bg-alt">
+            <div class="container grid-asymmetric-reverse">
+
+                <div class="text-content reveal-fade-up">
+                    <h2 class="section-heading">Reglas<br><span>American Truck Simulator</span></h2>
+                    <hr class="luxury-divider">
+                    <p class="body-text">Conoce nuestras normativas de convivencia y simulación. Haz clic para expandir
+                        cada sección.</p>
+                </div>
+
+                <!-- Acordeón HTML5 (Details/Summary) para cumplir la regla de "No saturar" -->
+                <div class="rules-accordion reveal-fade-right">
+
+                    <details class="accordion-item">
+                        <summary class="accordion-title">Conducción y Vías</summary>
+                        <div class="accordion-content">
+                            <!-- Textos Exactos Guía -->
+                            <p><strong>↔️ Conducir en sentido contrario solo si es completamente seguro:</strong> Está
+                                prohibido manejar en contravía salvo en situaciones especiales donde no afecte la
+                                experiencia de los demás. Si llegas a hacerlo, debe ser de forma responsable, con
+                                precaución y únicamente si es completamente seguro.</p>
+                            <p><strong>🚦 Respeta las señales de tránsito y límites de velocidad:</strong> Aunque es un
+                                juego, mantenemos el espíritu de simulación. Conduce como lo harías en la vida real.</p>
+                            <p><strong>⛽ No bloquear caminos, estaciones de servicio o talleres:</strong> Está prohibido
+                                detenerse en medio de la vía o zonas de paso. Usa los espacios designados para
+                                estacionarte.</p>
+                            <p><strong>🚛 Evitar usar más de 2 trailers en rutas de trocha o extrema:</strong> Esto
+                                ayuda a prevenir congestiones y mantener la fluidez del tráfico en carreteras difíciles.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="accordion-item">
+                        <summary class="accordion-title">Interacción y Respeto</summary>
+                        <div class="accordion-content">
+                            <!-- Textos Exactos Guía -->
+                            <p><strong>💥 Evita colisiones intencionales:</strong> Chocar a propósito contra otros
+                                jugadores es motivo de expulsión. Conduce con responsabilidad y mantén distancia segura.
+                            </p>
+                            <p><strong>🗣️ Respeto en el chat y la radio:</strong> No se permiten insultos, lenguaje
+                                ofensivo o discusiones. Mantenemos una comunidad amigable y respetuosa.</p>
+                            <p><strong>📻 Uso correcto de la radio del juego:</strong> La radio no es un chat social
+                                constante. Úsala solo para comunicaciones relacionadas con el tráfico o emergencias en
+                                el juego.</p>
+                            <p><strong>💬 Respeto en todos los medios (Discord, etc. ):</strong> Evita discusiones
+                                innecesarias o faltas de respeto en los grupos. Si tienes una queja, comunícala
+                                directamente a un administrador o menciónanos en el grupo.</p>
+                        </div>
+                    </details>
+
+                    <details class="accordion-item">
+                        <summary class="accordion-title">Técnicas y Juego</summary>
+                        <div class="accordion-content">
+                            <!-- Textos Exactos Guía -->
+                            <p><strong>🎮 Jugadores AFK deben salirse del servidor:</strong> Si necesitas ausentarte más
+                                de unos minutos, desconéctate para liberar espacio y evitar bloqueos.</p>
+                            <p><strong>🕹️ Rol y simulación primero:</strong> Este servidor busca una experiencia
+                                realista. Evita comportamientos de tipo arcade o troll.</p>
+                            <p><strong>📷 Uso de la cámara cero solo en emergencias:</strong> No está permitido usar la
+                                cámara cero para adelantar u obtener ventaja. Solo debe usarse en situaciones de
+                                emergencia, y al aparecer, hazlo con mucho cuidado para no caer sobre otros jugadores.
+                            </p>
+                            <p><strong>🌐 Jugadores con lag deben ubicarse al final o al frente del convoy:</strong>
+                                Esto ayuda a evitar accidentes causados por el retraso en la sincronización del juego.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="accordion-item">
+                        <summary class="accordion-title">Administración y Sanciones</summary>
+                        <div class="accordion-content">
+                            <!-- Textos Exactos Guía -->
+                            <p><strong>👮 Obedece a los moderadores y admins [CORP]:</strong> Sus decisiones buscan
+                                mantener el orden y la buena experiencia del servidor. No seguir sus indicaciones puede
+                                resultar en sanciones.</p>
+                            <p><strong>👥 Las decisiones de los administradores son consensuadas:</strong> Toda sanción
+                                es evaluada y acordada entre el equipo de administración. Si no estás de acuerdo con
+                                alguna decisión, puedes contactar al líder de la comunidad de forma respetuosa.</p>
+                            <p><strong>💾 Prohibido el tradeo, venta o pirateo de mods de paga:</strong> Cualquier
+                                intento de intercambio, venta o distribución ilegal de mods de pago resultará en baneo
+                                permanente.</p>
+                            <p><strong>⚠️ El incumplimiento de estas reglas conlleva sanciones:</strong> Las
+                                penalizaciones van desde suspensiones temporales hasta el baneo permanente, según la
+                                gravedad de la falta.</p>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 7. Footer: Canales de Atencion -->
+    <footer class="luxury-footer">
+        <div class="container footer-flex reveal-fade-up">
+
+            <div class="footer-brand-info">
+                <img src="PatronesMapkalo.png" alt="Patrones Mapkalo Logo" class="footer-logo">
+                <p class="body-text small">Simulación de élite.</p>
+            </div>
+
+            <div class="footer-social-info">
+                <h4 class="social-heading">Canales de Atencion</h4>
+                <div class="social-badges">
+                    <a href="https://www.youtube.com/@Patrones-Mapkalo-COL" target="_blank" rel="noopener noreferrer"
+                        class="social-link" title="YouTube">
+                        <img src="images/youtube_luxury.png" alt="YouTube Patrones Mapkalo" class="social-img-luxury">
+                    </a>
+
+                    <a href="https://discord.gg/ky4u56xx" target="_blank" rel="noopener noreferrer" class="social-link"
+                        title="Discord">
+                        <img src="images/discord_luxury.png" alt="Discord Patrones Mapkalo" class="social-img-luxury">
+                    </a>
+
+                    <a href="https://trucksbook.eu/company/197400" target="_blank" rel="noopener noreferrer"
+                        class="social-link" title="TrucksBook">
+                        <img src="images/trucksbook_luxury.png" alt="Trucksbook Patrones Mapkalo"
+                            class="social-img-luxury">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-copyright reveal-fade-up delay-1">
+            <p>&copy; 2026 Patrones Mapkalo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+
+    <!-- Scripts Propios (Luxury Reveal Vanilla JS) -->
+    <script src="script.js"></script>
+</body>
+
+</html>

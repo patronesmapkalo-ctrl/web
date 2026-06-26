@@ -1,0 +1,762 @@
+/* ==========================================================================
+   PATRONES MAPKALO - FERRARI ATS VTC V2
+   Theme: Pure Black, Minimalist, Asymmetric, Editorial
+   Constraints: 20vh Spacing, Playfair Display (Didot alt), Cover Video
+   ========================================================================== */
+
+:root {
+    /* 1. Palette: "Oscura y elegante (Negro, Gris Carbón, Dorado, Rojo)" */
+    --c-black: #000000;
+    --c-charcoal: #121212;
+    --c-alt: #0a0a0a;
+    --c-white: #ffffff;
+    --c-muted: #8e8e8e;
+    --c-gold: #d4af37;
+    --c-red: #e32636;
+    /* Ferrari Red */
+
+    /* 2. Typography: "Didot o Playfair Display + Sans-serif limpia" */
+    --f-heading: 'Playfair Display', serif;
+    --f-body: 'Montserrat', sans-serif;
+
+    /* 3. Layout constraints: "padding y margin generosos (ej. 20vh entre bloques)" */
+    --spacing-huge: 20vh;
+    --spacing-large: 8rem;
+    --container-max: 1300px;
+
+    /* Transitions */
+    --t-smooth: 1s cubic-bezier(0.25, 1, 0.5, 1);
+    --t-fast: 0.3s ease;
+}
+
+/* ==========================================================================
+   RESET & FOUNDATION
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    background-color: var(--c-black);
+}
+
+body {
+    background-color: var(--c-black);
+    color: var(--c-white);
+    font-family: var(--f-body);
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY SPECIFICS
+   ========================================================================== */
+.section-heading {
+    font-family: var(--f-heading);
+    font-size: clamp(3.5rem, 6vw, 5rem); /* Larger headings for better readability */
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+}
+
+.section-heading span {
+    font-style: italic;
+    color: var(--c-gold);
+}
+
+.body-text {
+    font-size: 1.1rem;
+    color: var(--c-muted);
+    margin-bottom: 1.5rem;
+    max-width: 650px;
+}
+
+.large-serif {
+    font-family: var(--f-heading);
+    font-size: 1.8rem;
+    line-height: 1.4;
+    color: var(--c-white);
+    font-style: italic;
+}
+
+.max-width-center {
+    margin: 0 auto 2rem auto;
+}
+
+/* ==========================================================================
+   LAYOUT UTILITIES
+   ========================================================================== */
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.luxury-section {
+    /* REGLA DE ORO: 20vh ENTRE BLOQUES */
+    padding: var(--spacing-huge) 0;
+    position: relative;
+}
+
+.bg-alt {
+    background-color: var(--c-alt);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.luxury-divider {
+    width: 60px;
+    height: 1px;
+    background-color: var(--c-gold);
+    border: none;
+    margin-bottom: 3rem;
+}
+
+.luxury-divider.center {
+    margin: 0 auto 3rem auto;
+}
+
+/* Grillas asimétricas ("Las rejillas asimétricas") */
+.grid-asymmetric {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 10%;
+    align-items: center;
+}
+
+.grid-asymmetric-reverse {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 8%;
+    align-items: start;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+/* ==========================================================================
+   1. NAVBAR
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 3rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: padding var(--t-fast), background var(--t-fast);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+}
+
+.navbar.scrolled {
+    padding: 2rem 5%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.brand-logo {
+    height: 300px;
+    display: flex;
+}
+
+.logo-img {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: height var(--t-fast);
+}
+
+.navbar.scrolled .logo-img {
+    height: 200px;
+    width: 200px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 3rem;
+}
+
+.nav-link {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color var(--t-fast);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--c-gold);
+    transition: width var(--t-fast);
+}
+
+.nav-link:hover {
+    color: var(--c-gold);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile Toggle */
+.mobile-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 2000;
+}
+
+.hamburger-line {
+    width: 25px;
+    height: 1px;
+    background-color: var(--c-white);
+    transition: var(--t-fast);
+}
+
+/* Mobile Overlay */
+.mobile-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: var(--c-black);
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--t-fast);
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobile-nav-menu {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+}
+
+.mobile-nav-link {
+    font-family: var(--f-heading);
+    font-size: 2.5rem;
+    color: var(--c-muted);
+    transition: color var(--t-fast);
+}
+
+.mobile-nav-link:hover {
+    color: var(--c-gold);
+}
+
+/* ==========================================================================
+   2. HERO SECTION (Video 100vh)
+   ========================================================================== */
+.hero-section {
+    height: 100vh; /* Full viewport height */
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.hero-video {
+    /* Recomendaciones guia: background-size: cover; y vh: 100 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%) scale(1.1);
+    object-fit: cover;
+    transition: transform 3s ease-out;
+}
+
+.hero-video.loaded {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.hero-gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.9) 100%);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    margin-top: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.hero-elite-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: auto;
+    opacity: 0.3;
+    /* Translúcido para que el texto sea legible */
+    z-index: 0;
+    pointer-events: none;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.8));
+}
+
+.hero-text-wrapper {
+    position: relative;
+    z-index: 1;
+    /* Encima de la imagen */
+}
+
+.hero-title {
+    font-family: var(--f-heading);
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 1rem;
+    letter-spacing: -0.03em;
+}
+
+.hero-title span {
+    font-style: italic;
+    color: var(--c-gold);
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--c-muted);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.mouse {
+    width: 20px;
+    height: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    position: relative;
+}
+
+.mouse::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 6px;
+    background-color: var(--c-gold);
+    border-radius: 2px;
+    animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, 15px);
+        opacity: 0;
+    }
+}
+
+/* ==========================================================================
+   SECTIONS: IMAGE EFFECTS (Parallax)
+   ========================================================================== */
+.parallax-container {
+    width: 100%;
+    height: 75vh;
+    /* Ocupa buena altura visual */
+    overflow: hidden;
+    position: relative;
+}
+
+.parallax-img {
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    object-position: center;
+    transform: translateY(-10%);
+}
+
+.signature-text {
+    font-family: var(--f-heading);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--c-gold);
+    margin-top: 3rem;
+}
+
+/* ==========================================================================
+   CARDS (Mods & DLC)
+   ========================================================================== */
+.luxury-card {
+    background-color: var(--c-charcoal);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: border-color var(--t-fast), transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.luxury-card:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    /* Gold subtle focus */
+    transform: translateY(-10px);
+}
+
+.card-image-wrapper {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+    filter: brightness(0.8) contrast(1.1);
+}
+
+.luxury-card:hover .card-image-wrapper img {
+    transform: scale(1.05);
+    filter: brightness(1) contrast(1.1);
+}
+
+.card-text-wrapper {
+    padding: 3rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-family: var(--f-heading);
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.code-block {
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #a0a0a0;
+    margin-top: 1rem;
+    word-break: break-all;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-link {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--c-gold);
+    transition: color var(--t-fast);
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.arrow {
+    margin-left: 10px;
+    transition: transform var(--t-fast);
+}
+
+.cta-link:hover {
+    color: var(--c-white);
+}
+
+.cta-link:hover .arrow {
+    transform: translateX(5px);
+}
+
+/* ==========================================================================
+   RULES ACCORDION (Design: "No saturar pantalla")
+   ========================================================================== */
+.rules-accordion {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.accordion-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.accordion-title {
+    font-family: var(--f-heading);
+    font-size: 1.5rem;
+    padding: 2rem 0;
+    cursor: pointer;
+    list-style: none;
+    /* remove default arrow */
+    position: relative;
+    transition: color var(--t-fast);
+}
+
+.accordion-title::-webkit-details-marker {
+    display: none;
+}
+
+.accordion-title::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--c-gold);
+    font-size: 1.5rem;
+}
+
+.accordion-item[open] .accordion-title::after {
+    content: '-';
+}
+
+.accordion-title:hover {
+    color: var(--c-gold);
+}
+
+.accordion-content {
+    padding: 0 0 2rem 0;
+    color: var(--c-muted);
+}
+
+.accordion-content p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.accordion-content strong {
+    color: var(--c-white);
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.luxury-footer {
+    background-color: var(--c-charcoal);
+    padding: 6rem 0 2rem 0;
+    border-top: 1px solid var(--c-alt);
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.footer-logo {
+    height: 150px; /* Increased logo size for prominence */
+    margin-bottom: 1rem;
+}
+
+.social-heading {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--c-muted);
+    margin-bottom: 1.5rem;
+}
+
+.social-badges {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.social-link {
+    display: block;
+    height: 80px;
+    /* Tamaño consistente para los iconos de lujo */
+    transition: transform var(--t-fast);
+}
+
+.social-img-luxury {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0.9) contrast(1.1);
+    transition: filter var(--t-fast), transform var(--t-fast);
+    border-radius: 8px;
+    /* Opcional: para suavizar si los bordes generados son muy rectos */
+}
+
+.social-link:hover .social-img-luxury {
+    filter: brightness(1.1) contrast(1.2);
+    transform: scale(1.1) translateY(-5px);
+}
+
+.social-link:hover {
+    transform: none;
+    /* Ya lo maneja la imagen */
+}
+
+.footer-copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 2rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #555;
+}
+
+/* ==========================================================================
+   THE "LUXURY REVEAL" (Intersection Observer Classes)
+   ========================================================================== */
+.reveal-fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity var(--t-smooth), transform var(--t-smooth);
+}
+
+.reveal-fade-left {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity var(--t-smooth), transform var(--t-smooth);
+}
+
+.reveal-fade-right {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity var(--t-smooth), transform var(--t-smooth);
+}
+
+.is-revealed {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.delay-1 {
+    transition-delay: 0.2s;
+}
+
+.delay-2 {
+    transition-delay: 0.4s;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 1024px) {
+
+    .grid-asymmetric,
+    .grid-asymmetric-reverse {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .parallax-container {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* El 20vh es "peligroso" en móviles a veces, si el usuario requiere estricto, 
+       podríamos bajar a 15vh en móvil, pero la orden es "ej. 20vh". Lo dejaré en 15vh para usabilidad móvil,
+       pero 20vh rige en la variable principal. */
+    .luxury-section {
+        padding: 15vh 0;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: flex;
+    }
+
+    .grid-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+
